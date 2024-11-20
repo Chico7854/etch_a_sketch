@@ -31,7 +31,3 @@ button#size {
 .gridSquare {
     flex: 1;
 }
-
-.backgroundColor {
-    background-color: black;
-}
