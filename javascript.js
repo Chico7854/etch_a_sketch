@@ -1,26 +1,33 @@
-function createGrid(container) {
-    for (let i = 0; i < 4; i++) {
+function createGrid() {
+    container.innerHTML = '';
+
+    for (let i = 0; i < gridSize.dataset.size; i++) {
         const row = document.createElement("div");
         container.appendChild(row);
 
-        for (let j = 0; j < 4; j++) {
+        for (let j = 0; j < gridSize.dataset.size; j++) {
             const column = document.createElement("div");
             row.appendChild(column);
             column.classList.add("gridSquare");
         }
     }
-    
+}
+
+function addGridEventListeners() {
+    const grid = Array.from(document.querySelectorAll(".gridSquare"));
+
+    grid.forEach(square => {
+        square.addEventListener("mouseenter", () => {
+            square.classList.add("backgroundColor");
+        });
+    })
 }
 
 const container = document.querySelector("#container");
+const gridSize = document.querySelector("#size");
 
-createGrid(container);
-
-const grid = Array.from(document.querySelectorAll(".gridSquare"));
-
-grid.forEach(square => {
-    square.addEventListener("mouseenter", () => {
-        console.log("Hi");
-        square.classList.add("backgroundColor")
-    });
+gridSize.addEventListener("click", () => {
+    gridSize.dataset.size = prompt ();
+    createGrid();
+    addGridEventListeners();
 })

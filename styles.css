@@ -4,9 +4,22 @@
     box-sizing: border-box;
 }
 
+html, body {
+    height: 100%;
+}
+
+header {
+    height: 5%;
+    padding: 10px;
+}
+
+button#size {
+    cursor: pointer;
+}
+
 #container {
     display: flex;
-    height: 100vh;
+    height: 95%;
 }
 
 #container > div {
@@ -16,7 +29,6 @@
 }
 
 .gridSquare {
-    border: 1px solid green;
     flex: 1;
 }
 
