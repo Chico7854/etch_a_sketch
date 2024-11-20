@@ -20,7 +20,7 @@ function addGridEventListeners() {
 
     grid.forEach(square => {
         square.addEventListener("mouseenter", () => {
-            if (square.style.opacity < 1) square.style.opacity = Number(square.style.opacity) + 0.1;
+            if (square.style.opacity < 1) square.style.opacity = Number(square.style.opacity) + 0.2;
         });
     })
 }
@@ -33,6 +33,14 @@ function calculateNumberOfRows(numberOfColumns) {
 
 const container = document.querySelector("#container");
 const gridSize = document.querySelector("#size");
+
+//Make a default option for when the user opens the web to already play the game
+//Before the user needed to put the size of the grid to play
+gridSize.dataset.size = 150;
+let numberOfRows = calculateNumberOfRows(gridSize.dataset.size);
+createGrid(numberOfRows);
+addGridEventListeners();
+
 
 gridSize.addEventListener("click", () => {
     gridSize.dataset.size = prompt ();
