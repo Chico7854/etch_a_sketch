@@ -9,6 +9,8 @@ function createGrid(numberOfRows) {
             const column = document.createElement("div");
             row.appendChild(column);
             column.classList.add("gridSquare");
+            column.style.backgroundColor = "black";
+            column.style.opacity = 0;
         }
     }
 }
@@ -18,7 +20,7 @@ function addGridEventListeners() {
 
     grid.forEach(square => {
         square.addEventListener("mouseenter", () => {
-            square.style.backgroundColor = "black";
+            if (square.style.opacity < 1) square.style.opacity = Number(square.style.opacity) + 0.1;
         });
     })
 }

@@ -11,6 +11,8 @@ html, body {
 header {
     height: 5%;
     padding: 10px;
+    background-color: antiquewhite;
+    border-bottom: 3px solid black;
 }
 
 button#size {
